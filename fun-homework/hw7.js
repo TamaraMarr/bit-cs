@@ -1,3 +1,5 @@
+'use strict'
+
 function wordInString(str, word) {
     var counter = 0;
     var times = 0;

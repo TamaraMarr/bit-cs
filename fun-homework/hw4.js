@@ -1,3 +1,5 @@
+'use strict'
+
 function lastElement (arr, n) {
     var last = arr[arr.length - 1];
     var lastCouple = [];

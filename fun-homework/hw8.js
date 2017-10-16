@@ -1,3 +1,5 @@
+'use strict'
+
 function hideAddress(address) {
     var atPosition;
 

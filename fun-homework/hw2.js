@@ -1,3 +1,5 @@
+'use strict'
+
 function filterFalsy(arr) {
     var newArr = [];
     var counter = 0;

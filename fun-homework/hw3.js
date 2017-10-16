@@ -1,3 +1,5 @@
+'use strict'
+
 function reverse(num) {
     var numStr = num.toString();
     var newStr = [];

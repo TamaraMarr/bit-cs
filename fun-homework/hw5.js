@@ -1,3 +1,5 @@
+'use strict'
+
 function preFilled(num, smth) {
     var arr = [];
 
