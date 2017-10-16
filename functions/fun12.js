@@ -3,19 +3,22 @@ function retirement(gender, yearOfBirth) {
     var retirementM = 65;
     var retirementF = 60;
     var yearsLeft;
+    var yearsLeftM = retirementM - age;
+    var yearsLeftF = retirementF - age;
 
-    if(gender === "f" || gender === "female") {
-        yearsLeft = retirementF - age;
-        return yearsLeft;
+    
+    if(yearsLeftF <= 0 || yearsLeftM <= 0) {
+         return "You are already retired.";
+     } else if(gender === "f" || gender === "female") {
+        return yearsLeftF;
     } else if (gender === "m" || gender === "male") {
-        yearsLeft = retirementM - age;
-        return yearsLeft;
+        return yearsLeftM; 
     } else {
-        console.log("Please enter your gender in f/m or female/male format.");
+        return "Please enter your gender in f/m or female/male format.";
     }
 }
 
-var gender = "ur";
-var year = 1989;
+var gender = "f";
+var year = 1955;
 
 console.log(retirement(gender, year));

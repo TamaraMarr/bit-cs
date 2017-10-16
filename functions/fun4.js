@@ -1,16 +1,20 @@
 function humanize(num) {
-    if (num % 100 === 1 && num % 100 !== 11) {
-        console.log(num + "st");
-    } else if (num % 100 === 2 && num % 100 !== 12) {
-        console.log(num + "nd");
-    } else if (num % 100 === 3 && num % 100 !== 13) {
-        console.log(num + "rd");
-    } else if (num % 100 >= 11 && num % 100 <= 13) {
-        console.log(num + "th");
+    var n = num.toString();
+
+    var broj = n[n.length - 1];
+
+    if (n % 100 >= 11 && n % 100 <= 13) {
+        return n + "th";
+    } else if (broj === "1") {
+        return n + "st";
+    } else if (broj === "2") {
+        return n + "nd";
+    } else if (broj === "3") {
+        return n + "rd";
     } else {
-        console.log(num + "th");
+        return n + "th";
     }
 }
 
-var num = 13;
-humanize(num);
+var num = 153;
+console.log(humanize(num));
