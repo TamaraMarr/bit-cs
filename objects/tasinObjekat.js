@@ -22,4 +22,14 @@ var cats = {
     
 };
 
-console.log(cats.breed);
+function Cat () {
+    this.cute = true;
+}
+
+cats = new Cat();
+
+function Animal () {
+    this.
+}
+
+console.log(cats.cute);

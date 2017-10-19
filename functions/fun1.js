@@ -9,4 +9,3 @@ if (isString(something)) {
 } else {
     console.log("This is not a string.");
 }
-
