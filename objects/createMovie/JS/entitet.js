@@ -10,4 +10,16 @@ Movie.prototype.getMovieInfo = function () {
 
 function Program(date) {
     this.date = date;
+
+    this.moviesInProgram = [];
+}
+
+Program.prototype.getProgramInfo = function() {
+    var formattedDate = formatDate(this.date);
+    var movies
+    for(var i = 0; i < this.moviesInProgram.length; i++) {
+
+    }
+
+    return formattedDate;
 }

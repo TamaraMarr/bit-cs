@@ -35,20 +35,22 @@ var moviesDropDown = document.getElementById('movies-programs-list');
 function getMovieListHTML(moviesArray) {
     var movieListHTML = "<ul>";
     
-    //making a list of movies in the div>ul element; making the dropdown list of movies;
+    var option = "";
+
+    //making a list of movies in the div>ul element; making the dropdown list of movies; adds value attribute to the movie for easy identification
     for (var i = 0; i < moviesArray.length; i++) {
         var film = moviesArray[i];
         movieListHTML += "<li>" + film.getMovieInfo() + "</li>";
-
-        var option = document.createElement('option');
         var content = document.createTextNode(film.title);
-        option.appendChild(content);
+        option += "<option value='" + i + "'>" + content + " </option>";
         moviesDropDown.appendChild(option);
     }
+
     movieListHTML += "</ul>";
     return movieListHTML;
 }
 
+var selectedMovie = movies[0]
 var programs = [];
 
 function createProgram() {
@@ -102,4 +104,15 @@ function formatDate(dateStr) {
     var date = new Date(dateStr.split("-").join(" "));
     var formattedDate = date.getDate() + '.' + date.getMonth() + '.' + date.getFullYear();
     return formattedDate;
+}
+
+var programsArr = [];
+
+function moviesInPrograms() {
+    var selectedMovie = document.getElementById('movies-programs-list');
+    var selectedProgram = document.getElementById('programs-movies-list');
+
+    var currentMovie = selectedMovie.value;
+    var currentProgram = selectedProgram.value;
+
 }
