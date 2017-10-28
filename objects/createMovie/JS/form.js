@@ -1,6 +1,7 @@
 var movies = [];
 
 function createMovie () {
+    //selectors
     var titleElement = document.getElementById("mTitle");
     var lengthElement = document.getElementById("mLength");
     var genreSelectElement = document.getElementById("genre-select");
@@ -8,10 +9,12 @@ function createMovie () {
     var movieListElement = document.getElementById("movie-list");
     var errorElement = document.getElementById("error");
 
+    //values
     var title = titleElement.value;
     var length = lengthElement.value;
     var genre = genreOptionElement.value;
 
+    //error message
     if (!title || !length || (genre === 'none')) {
         errorElement.textContent = "Error";
         return;
@@ -19,12 +22,16 @@ function createMovie () {
 
     errorElement.textContent = "";
 
+    //creating new movie
     var movie = new Movie(title, length, genre);
 
+    //adding it to the movies array
     movies.push(movie);
 
+    //making the list in the html - my function
     movieListElement.innerHTML = getMovieListHTML(movies);
 
+    //resetting values
     titleElement.value = "";
     lengthElement.value = "";
     genreSelectElement.selectedIndex = 0;
@@ -34,18 +41,18 @@ var moviesDropDown = document.getElementById('movies-programs-list');
 
 function getMovieListHTML(moviesArray) {
     var movieListHTML = "<ul>";
-    
-    var option = "";
 
     //making a list of movies in the div>ul element; making the dropdown list of movies; adds value attribute to the movie for easy identification
     for (var i = 0; i < moviesArray.length; i++) {
         var film = moviesArray[i];
         movieListHTML += "<li>" + film.getMovieInfo() + "</li>";
+        var option = document.createElement('option');
         var content = document.createTextNode(film.title);
-        option += "<option value='" + i + "'>" + content + " </option>";
-        moviesDropDown.appendChild(option);
+        option.setAttribute('value', i);
+        option.appendChild(content);
     }
-
+    
+    moviesDropDown.appendChild(option);
     movieListHTML += "</ul>";
     return movieListHTML;
 }
@@ -91,28 +98,59 @@ function getProgramListHTML(programsArray, date) {
         programListHTML += "<li>" + program.date + "</li>";
 
         var option = document.createElement('option');
+        option.setAttribute("value", i);
         var content = document.createTextNode(date);
         option.appendChild(content);
-        programsDropDown.appendChild(option);
     }
-
+    
+    programsDropDown.appendChild(option);
     programListHTML += "</ul>";
     return programListHTML;
 }
 
 function formatDate(dateStr) {
     var date = new Date(dateStr.split("-").join(" "));
-    var formattedDate = date.getDate() + '.' + date.getMonth() + '.' + date.getFullYear();
+    var formattedDate = date.getDate() + '.' + (date.getMonth() + 1) + '.' + date.getFullYear();
     return formattedDate;
 }
 
-var programsArr = [];
+function addMovie() {
+    var moviesDropDown = document.getElementById('movies-programs-list');
+    var programsDropDown = document.getElementById('programs-movies-list');
+    var movieIndex = moviesDropDown[moviesDropDown.selectedIndex].value;
+    var programIndex = programsDropDown[programsDropDown.selectedIndex].value;
+    var selMovie = movies[movieIndex];
+    var selProgram = programs[programIndex];
 
-function moviesInPrograms() {
-    var selectedMovie = document.getElementById('movies-programs-list');
-    var selectedProgram = document.getElementById('programs-movies-list');
+    selProgram.moviesInProgram.push(selMovie.title);
+    selProgram.numOfMovies = selProgram.moviesInProgram.length;
+    
+    var moviesInProgramList = "<ul>";
+    moviesInProgramList += 'Current number of movies for ' + selProgram.date + ': ' + selProgram.numOfMovies;
 
-    var currentMovie = selectedMovie.value;
-    var currentProgram = selectedProgram.value;
+    for(var i = 0; i < selProgram.moviesInProgram.length; i++) {
+        moviesInProgramList += '<li>' + selProgram.moviesInProgram[i] + '</li>';
+    }
 
+    moviesInProgramList += "</ul>";
+
+    document.getElementById('numOfMoviesInProgram').innerHTML = moviesInProgramList;
+}
+
+function previewFestData() {
+    var previewData = '<p>';
+    for(var i = 0; i < programs.length; i++) {
+        previewData += programs[i].date + '<br>';
+        for(var j = 0; j < programs[i].moviesInProgram.length; j++) {
+            previewData += '&nbsp;&nbsp;&nbsp;' + programs[i].moviesInProgram[j] + '<br>';
+        }
+    }
+    previewData += '</p>';
+    
+    document.getElementById('previewedFestData').innerHTML = previewData;
+}
+
+function createFestival() {
+    var festival = new Festival(programs);
+    console.log(festival);
 }

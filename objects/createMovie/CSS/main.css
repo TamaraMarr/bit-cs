@@ -1,0 +1,44 @@
+body {
+  font-family: sans-serif; }
+
+.container {
+  text-align: center;
+  width: 80%;
+  margin: 0px auto; }
+
+form {
+  list-style-type: none;
+  width: 100%;
+  border: 1px solid grey;
+  padding: 5px;
+  box-sizing: border-box; }
+  form input, form select, form option {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    margin: 5px 0px;
+    padding: 10px; }
+  form input[type=button] {
+    color: white;
+    background-color: #28288f;
+    border-radius: 5px;
+    border: none; }
+
+button {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  margin: 5px 0px;
+  padding: 10px;
+  color: white;
+  background-color: #1e1e4d;
+  border: none;
+  border-radius: 5px; }
+
+#error, #date-error {
+  color: red; }
+
+div ul li {
+  list-style-type: none; }
+
+/*# sourceMappingURL=main.css.map */

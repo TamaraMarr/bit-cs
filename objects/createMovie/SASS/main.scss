@@ -1,0 +1,49 @@
+body{
+    font-family: sans-serif;
+}
+
+
+.container {
+    text-align: center;
+    width: 80%;
+    margin: 0px auto;
+
+}
+form{
+    list-style-type: none;    
+    width: 100%;
+    border: 1px solid grey;
+    padding: 5px;
+    box-sizing: border-box;
+    input,select,option{
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+        margin: 5px 0px;
+        padding: 10px;
+    }
+    input[type=button]{
+        color: white;
+        background-color: rgb(40, 40, 143);
+        border-radius: 5px;
+        border: none;
+    }
+    
+}
+button{
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    margin: 5px 0px;
+    padding: 10px;
+    color:white;
+    background-color: rgb(30, 30, 77);
+    border: none;
+    border-radius: 5px;
+}
+#error, #date-error{
+    color:red;
+}
+div ul li{
+list-style-type: none;
+}

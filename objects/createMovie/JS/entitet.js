@@ -10,16 +10,15 @@ Movie.prototype.getMovieInfo = function () {
 
 function Program(date) {
     this.date = date;
-
     this.moviesInProgram = [];
+    this.numOfMovies = 0;
 }
 
 Program.prototype.getProgramInfo = function() {
-    var formattedDate = formatDate(this.date);
-    var movies
-    for(var i = 0; i < this.moviesInProgram.length; i++) {
+    return this.date + ' ' + this.moviesInProgram;
+}
 
-    }
-
-    return formattedDate;
+function Festival(programs) {
+    this.name = 'Super Duper Fun Fest';
+    this.programs = [];
 }
