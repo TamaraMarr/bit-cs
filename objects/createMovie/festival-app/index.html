@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Movie List</title>
+</head>
+
+<body>
+        <div class="container">
+        <h1>Super Duper Fun Fest</h1>
+        <h2>Movie List</h2>
+
+        <form id="enter">
+            <input type="text" id="mTitle" value="" placeholder="Title">
+            <input type="number" id="mLength" value="" placeholder="Length">
+            <select name="genre-select" id="genre-select">
+                <option value="none">-</option>
+                <option value="action">Action</option>
+                <option value="thriller">Thriller</option>
+                <option value="drama">Drama</option>
+                <option value="romance">Romance</option>
+            </select>
+            <div id="error"></div>
+            <input type="button" value="Create Movie" id="create-movie">
+            
+            <div id="movie-list">
+                <ul>
+                
+                </ul>
+            </div>
+        </form>
+
+        <h2>Program</h2>
+
+        <form>
+            <input type="date" id="pdate">
+            <div id="date-error"></div>
+            <input type="button" onclick='createProgram()' value="Create program">
+            <div id="program-list"></div>
+        </form>
+
+        
+
+        <form>
+            <select name="movies-programs-list" id="movies-programs-list">
+                <option value="none">Movies</option>
+            </select>
+            <select name="programs-movies-list" id="programs-movies-list">
+                <option value="none">Programs</option>
+            </select>
+
+            <input type="button" onclick="addMovie()" value="Add Movie to Program" id="addMovieToProgram">
+            <div id="numOfMoviesInProgram"></div>
+        </form>
+
+        
+            <button id="previewFestData" onclick="previewFestData()">Preview Festival Data</button>
+            <div id="previewedFestData">
+                
+            </div>
+            <button id="createFestival" onclick="createFestival">Create festival</button>
+
+        <script src="js/app.js"></script>
+    </div>
+</body>
+
+</html>
