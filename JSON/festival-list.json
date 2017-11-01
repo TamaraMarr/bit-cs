@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Bla fest",
+        "programs": [
+            {
+                "date": 124365457,
+                "movies": [
+                    {
+                        "title": "Superman",
+                        "length": 123,
+                        "isPlayed": false
+                    },
+                    {
+                        "title": "Spiderman",
+                        "length": 123,
+                        "isPlayed": false
+                    },
+                    {
+                        "title": "Batman",
+                        "length": 123,
+                        "isPlayed": false
+                    }
+                ]
+            }
+        ]
+    }
+]

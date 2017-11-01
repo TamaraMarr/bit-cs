@@ -24,7 +24,7 @@ function createMovie () {
     movies.push(movie);
 
     movieListElement.innerHTML = getMovieListHTML(movies);
-
+``
     titleElement.value = "";
     lengthElement.value = "";
     genreSelectElement.selectedIndex = 0;

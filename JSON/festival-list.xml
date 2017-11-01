@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+	<0>
+		<name>Bla fest</name>
+		<programs>
+			<date>124365457</date>
+			<movies>
+				<title>Superman</title>
+				<length>123</length>
+				<isPlayed>false</isPlayed>
+			</movies>
+			<movies>
+				<title>Spiderman</title>
+				<length>123</length>
+				<isPlayed>false</isPlayed>
+			</movies>
+			<movies>
+				<title>Batman</title>
+				<length>123</length>
+				<isPlayed>false</isPlayed>
+			</movies>
+		</programs>
+	</0>
