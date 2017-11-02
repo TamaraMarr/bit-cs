@@ -52,7 +52,7 @@ var UIController = (function () {
             title: titleElement.value,
             length: lengthElement.value,
             genre: genreOptionElement.value
-    }
+        }
 
         return result;
     }

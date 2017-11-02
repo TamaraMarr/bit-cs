@@ -36,7 +36,6 @@ const dataController = (() => {
                 data.failedStudents++
             }
 
-
             data.failedPercent = ((data.failedStudents * 100) / data.totalStudents).toFixed(0);
             data.passedPercent = 100 - data.failedPercent;
 
