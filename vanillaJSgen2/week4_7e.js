@@ -10,19 +10,7 @@ function validator(f1, f2, f3, f4) {
 validator(isAllCapitals, doesContainDigits, isValidHexColor, isInInterval);
 
 function isAllCapitals(str) {
-    var capitalLettersCounter = 0;
-
-    for (var i = 0; i < str.length; i++) {
-        if (str.charCodeAt(i) >= 65 && str.charCodeAt(i) <= 90) {
-            capitalLettersCounter++;
-        }
-    }
-
-    if (capitalLettersCounter !== str.length) {
-        return false;
-    }
-
-    return true;
+    return str === str.toUpperCase();
 }
 
 function doesContainDigits(str) {
@@ -54,9 +42,5 @@ function isValidHexColor(color) {
 }
 
 function isInInterval(n) {
-    if (n >= 1900 && n <= 2018) {
-        return true;
-    }
-
-    return false;
+    return n >= 1900 && n <= 2018;
 }
