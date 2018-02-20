@@ -1,10 +1,8 @@
 var duplicateArrElements = function(arr) {
     var newArr = [];
-    var newArrIndex = 0;
 
-    for (var i = 0; i < arr.length; i++, newArrIndex+=2) {
-        newArr[newArrIndex] = arr[i];
-        newArr[newArrIndex + 1] = arr[i];
+    for (var i = 0; i < arr.length; i++) {
+        newArr.push(arr[i], arr[i]);
     }
 
     return newArr;

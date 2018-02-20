@@ -1,9 +1,5 @@
 function isInInterval(n) {
-    if (n >= 1900 && n <= 2018) {
-        return true;
-    }
-
-    return false;
+    return n >= 1900 && n <= 2018;
 }
 
 console.log(isInInterval(1955));

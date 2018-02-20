@@ -7,4 +7,4 @@ function daysTillBDay(birthday) {
     return daysTillBDay;
 }
 
-console.log(daysTillBDay("13 October 2018"));
+console.log(daysTillBDay("04 November 2018"));

@@ -1,11 +1,12 @@
 function eleBeginningWithPro(arr) {
     var newArr = [];
-    var newArrIndex = 0;
 
     for (var i = 0; i < arr.length; i++) {
-        if (arr[i].toLowerCase().slice(0, 3) === "pro") {
-            newArr[newArrIndex] = arr[i];
-            newArrIndex++;
+        var elem = arr[i];
+        var prefix = arr[i].toLowerCase().slice(0, 3);
+
+        if (prefix === "pro") {
+            newArr.push(elem);
         }
     }
 
